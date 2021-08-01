@@ -1,0 +1,1 @@
+export const BUY_POTATO = 'BUY_POTATO';
