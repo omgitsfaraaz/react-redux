@@ -3,12 +3,17 @@ import { buyPotato } from '../redux';
 import { connect } from 'react-redux';
 
 function PotatoContainer(props) {
-    const { cart, numOfPotatoes, buyPotato } = props;
+    const { numOfPotatoes, buyPotato } = props;
     return (
         <div>
-            <h1>Cart - {cart}</h1>
-            <h2>Tomato - ({numOfPotatoes})</h2>
-            <button onClick={buyPotato}>Buy potato</button>
+            {numOfPotatoes <= 0 ? (
+                <h1>No potatoes boss!</h1>
+            ) : (
+                <div>
+                    <h2>Potato - ({numOfPotatoes})</h2>
+                    <button onClick={buyPotato}>Buy potato</button>
+                </div>
+            )}
         </div>
     )
 }
